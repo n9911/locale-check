@@ -1,0 +1,8 @@
+{
+  "id": "locale-check",
+  "title": "Locale Check",
+  "description": "Сверка ключей JSON и плейсхолдеров перевода",
+  "limit": "Не оценивает смысловую точность перевода",
+  "port": 8835,
+  "vendor": []
+}
