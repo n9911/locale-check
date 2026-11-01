@@ -1,4 +1,5 @@
 import test from'node:test';import assert from'node:assert/strict';import{tool}from'../tool.mjs';
+test('unsupported ICU is rejected also in missing and extra keys',async()=>{const message='{count, plural, one {item} other {items}}';await assert.rejects(tool.run({source:JSON.stringify({missing:message}),target:'{}'}),/ICU/);await assert.rejects(tool.run({source:'{}',target:JSON.stringify({extra:message})}),/ICU/);});
 test('missing extra and placeholders',async()=>{const r=await tool.run({source:'{"a":{"b":"Hello {name}"},"missing":"X"}',target:'{"a":{"b":"Hi {user}"},"extra":"Y"}'});assert.deepEqual(r.table.rows,[['a.b','Не совпадают плейсхолдеры'],['missing','Нет перевода'],['extra','Лишний ключ']]);});
 test('placeholder order independent and count meaningful',async()=>{const r=await tool.run({source:'{"x":"{a} %s {b}"}',target:'{"x":"{b} {a} %s"}'});assert.equal(r.table.rows.length,0);const repeated=await tool.run({source:'{"x":"{a} {a}"}',target:'{"x":"{a}"}'});assert.equal(repeated.table.rows.length,1);});
 test('unsupported values rejected',()=>assert.rejects(()=>tool.run({source:'{"a":[]}',target:'{}'}),/строкой/));
