@@ -1,6 +1,6 @@
 # Locale Check
 
-<img src="icon.svg" width="88" alt="Locale Check">
+<img src="src/assets/icon.svg" width="88" alt="Locale Check">
 
 Compara cadenas JSON anidadas y marcadores {name}, {{name}}, %s, %1$s. No admite sintaxis ICU plural/message.
 
