@@ -100,8 +100,12 @@ Saved data belongs to this origin, port and browser profile. Browser storage is
 not an encrypted vault; clearing site data may remove it. Keep exported files and
 an independent backup. A persistent-storage request may be declined by the browser.
 
-The interface supports English, Russian and Spanish. First use follows browser
-language and system appearance; explicit language and theme selections are saved
+The interface supports English, Russian and Spanish. First use selects the first
+supported entry in the browser's language preferences (including regional variants
+such as `es-MX` and `ru-RU`); if none match, it uses English. A valid saved manual
+language choice takes priority. If browser storage is unavailable, automatic
+selection still works for the current visit. System appearance is followed;
+explicit language and theme selections are saved
 locally. User-provided text is never translated.
 
 ## Offline use
