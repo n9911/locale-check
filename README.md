@@ -2,34 +2,34 @@
 
 <img src="src/assets/icon.svg" width="88" alt="Locale Check">
 
-Сверка ключей JSON и плейсхолдеров перевода. Локальный инструмент 0.1.0, JavaScript / Node.js.
+Compare JSON translation keys and placeholders. Local JavaScript / Node.js utility, version 0.1.0.
 
-## Запуск
+## Quick start
 
-Node.js 22+. Windows: Start.cmd. macOS/Linux: sh start.sh. Откройте http://127.0.0.1:8835/. Порт можно задать переменной PORT. Сервер слушает только 127.0.0.1 и отдаёт фиксированный список файлов. Не открывайте index.html напрямую: ES modules требуют HTTP.
+Node.js 22 or newer is required. On Windows, run Start.cmd. On macOS/Linux, run sh start.sh. Open http://127.0.0.1:8835/. Override the port with the PORT environment variable. The server listens only on 127.0.0.1 and serves an explicit file allowlist. Open the HTTP address rather than index.html directly: ES modules require HTTP.
 
-Нажмите «Пример», затем «Обработать», изучите результат и сохраните нужные файлы по ссылкам экспорта. Для файловых задач выберите разрешённые файлы вручную.
+Choose Example, then Run, review the result and save the files using the export links. For file-based tasks, select files you are permitted to process.
 
-## Данные
+## Inputs
 
-- **Исходный JSON** (textarea).
-- **Перевод JSON** (textarea).
+- **Source JSON** (textarea).
+- **Translation JSON** (textarea).
 
-Ввод, вычисления и файлы остаются в браузере. Сохранение полей на этом устройстве — только по кнопке; выбранные файлы не сохраняются. «Удалить сохранённое» удаляет только сохранённые поля этого приложения. Локальное хранение не зашифровано: не используйте общий профиль браузера для чувствительных данных. Результат экспорта проверяйте перед переносом в рабочую систему.
+Input, processing and files stay in the browser. Saving input on this device requires an explicit button action; selected files are not included in that legacy input save. Clear saved data removes only this application's saved input. Local storage is not encrypted: avoid shared browser profiles for sensitive data. Review exported results before using them in a production workflow.
 
-## Границы
+## Scope and limitations
 
-Не оценивает смысловую точность перевода. Нет сетевой публикации, синхронизации между людьми или автоматических платных запросов. Mac/Linux не проверены на настоящих устройствах.
+This does not assess the semantic accuracy of a translation. There is no network publishing, shared-user synchronization or automatic paid API access. Native macOS/Linux operation has not been verified on actual devices.
 
-## Проверка
+## Verification
 
 node --test tests/*.test.mjs
 
-Общая оболочка и сервер скопированы из ../product-launchpad/scaffold; после копирования проект автономен и не импортирует соседние приложения. Логика: tool.mjs. Исходные примеры — синтетические.
+The shared interface and server originate from product-launchpad/scaffold. This project is standalone and does not import neighboring applications. Tool logic is in src/js/tool.mjs. Included examples use synthetic data.
 
 ## License
 
-MIT — собственный код; автор Denis Gutsuliak (d9911).
+Original code is licensed under MIT. Author: Denis Gutsuliak (d9911).
 
 ## Interface and local projects — 2026-11-04
 
